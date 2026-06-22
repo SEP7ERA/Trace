@@ -1,0 +1,47 @@
+{
+  "name": "api-security-scanner",
+  "version": "1.0.1",
+  "description": "Automated API security testing tool with FastAPI backend and ReactTS frontend",
+  "private": true,
+  "scripts": {
+    "dev": "docker compose -f dev.compose.yml up",
+    "dev:build": "docker compose -f dev.compose.yml up --build",
+    "dev:down": "docker compose -f dev.compose.yml down",
+    "dev:logs": "docker compose -f dev.compose.yml logs -f",
+    "dev:ps": "docker compose -f dev.compose.yml ps",
+    "dev:shell": "docker compose -f dev.compose.yml exec backend /bin/bash",
+    "prod": "docker compose -f compose.yml up -d",
+    "prod:build": "docker compose -f compose.yml up --build -d",
+    "prod:down": "docker compose -f compose.yml down",
+    "prod:logs": "docker compose -f compose.yml logs -f",
+    "prod:ps": "docker compose -f compose.yml ps",
+    "clean": "docker compose -f dev.compose.yml down -v && docker compose -f compose.yml down -v",
+    "clean:all": "npm run clean && docker system prune -af --volumes",
+    "backend:install": "cd backend && uv sync",
+    "backend:setup": "cd backend && uv venv && uv sync --all-extras",
+    "backend:reinstall": "cd backend && uv lock --upgrade && uv sync --all-extras",
+    "backend:check": "cd backend && uv run ruff check .",
+    "backend:fix": "cd backend && uv run ruff check . --fix",
+    "backend:lint": "cd backend && uv run pylint .",
+    "backend:typecheck": "cd backend && uv run mypy .",
+    "backend:format": "cd backend && uv run yapf -i -r -vv models/ repositories/ schemas/ scanners/ core/ factory/",
+    "backend:qa": "npm run backend:check && npm run backend:typecheck",
+    "backend:lock": "cd backend && uv lock",
+    "backend:update": "cd backend && uv lock --upgrade && uv sync --all-extras"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CarterPerez-dev/Cybersecurity-Projects/PROJECTS/intermediate/api-security-scanner"
+  },
+  "keywords": [
+    "security",
+    "api-testing",
+    "vulnerability-scanner",
+    "pentesting",
+    "fastapi",
+    "react",
+    "docker"
+  ],
+  "author": "https://github.com/CarterPerez-dev",
+  "license": "MIT"
+}
