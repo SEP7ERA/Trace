@@ -43,13 +43,10 @@ Visit `http://localhost:8080` to open the dashboard.
 
 ## Documentation
 
-Overview (docs/00-OVERVIEW.md)
-
-| Module | Topic |
-|--------|-------|
-| [01 - Concepts](docs/01-CONCEPTS.md) | theory & real-world breaches |
-| [02 - Architecture](docs/02-ARCHITECTURE.md) | System design and data flow |
-| [03 - Implementation](docs/03-IMPLEMENTATION.md) | Code walkthrough |
+[Overview](docs/00-OVERVIEW.md) ||
+[Concepts](docs/01-CONCEPTS.md) || 
+[Architecture](docs/02-ARCHITECTURE.md) ||
+[Implementation](docs/03-IMPLEMENTATION.md) 
 
 ## License
 
